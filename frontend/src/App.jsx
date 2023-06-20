@@ -1,14 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Detail from "./components/Detail";
 import Header from "./components/Header";
 import Main from "./pages/main";
 
 function App() {
   return (
-    <div className="">
-      <Header></Header>
-      <Main></Main>
-      <Detail></Detail>
-    </div>
+    <BrowserRouter>
+      <div className="">
+        <Header></Header>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/detail" element={<Detail />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
